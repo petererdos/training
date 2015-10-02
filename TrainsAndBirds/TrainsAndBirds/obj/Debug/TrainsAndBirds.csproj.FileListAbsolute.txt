@@ -1,0 +1,6 @@
+D:\GitRepo\TrainsAndBirds\TrainsAndBirds\bin\Debug\TrainsAndBirds.exe.config
+D:\GitRepo\TrainsAndBirds\TrainsAndBirds\bin\Debug\TrainsAndBirds.exe
+D:\GitRepo\TrainsAndBirds\TrainsAndBirds\bin\Debug\TrainsAndBirds.pdb
+D:\GitRepo\TrainsAndBirds\TrainsAndBirds\obj\Debug\TrainsAndBirds.csprojResolveAssemblyReference.cache
+D:\GitRepo\TrainsAndBirds\TrainsAndBirds\obj\Debug\TrainsAndBirds.exe
+D:\GitRepo\TrainsAndBirds\TrainsAndBirds\obj\Debug\TrainsAndBirds.pdb
