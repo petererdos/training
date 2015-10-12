@@ -37,11 +37,15 @@ namespace Goats {
         }
 
 
-        /*public int Goats() {
+        public float CalculateOneGoatOneDay() {
+            float goatsoneday = zKg / xDays;
+            float onegoatoneday = goatsoneday / yGoats;
+            return onegoatoneday;
+        }
 
-
-
-            
-        }*/
+        public float CalculateQGoatsFood() {
+            float qgoatsfood = CalculateOneGoatOneDay() * wDays;
+            return qgoatsfood;
+        }
     }
 }
