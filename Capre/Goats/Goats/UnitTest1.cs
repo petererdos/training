@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Goats {
@@ -10,6 +11,13 @@ namespace Goats {
         int qGoats = 17;
         int wDays = 23;
         int unit = 1;
+
+        /* Wanted to add a relation between the alphabetic naming,
+         * like A < B < C, but with the possibility to customize the unit.
+         * So if the unit is 1, A=1, B=2, C=3 and so on; this is the reasoning behind forcing to 
+         * pass the tests only if the values of the goats, days and kg have this
+         * relation.
+         */
 
         [TestMethod]
         public void CheckXDaysValue() {
@@ -36,15 +44,27 @@ namespace Goats {
             Assert.AreEqual(qGoats, 17 * unit);
         }
 
+        [TestMethod]
+        public void CheckOneGoatOneDay() {
+            Assert.AreEqual(0.04, CalculateOneGoatOneDay());
+        }
 
-        public float CalculateOneGoatOneDay() {
-            float goatsoneday = zKg / xDays;
-            float onegoatoneday = goatsoneday / yGoats;
+        [TestMethod]
+        public void CheckResults() {
+            Assert.AreEqual(15.64, CalculateQGoatsFood());
+        }
+
+
+        public double CalculateOneGoatOneDay() {
+            double xgoatsoneday = zKg / xDays;
+            double onegoatonedaydec = xgoatsoneday / yGoats;
+            double onegoatoneday = Math.Round(onegoatonedaydec, 2, MidpointRounding.AwayFromZero);
             return onegoatoneday;
         }
 
-        public float CalculateQGoatsFood() {
-            float qgoatsfood = CalculateOneGoatOneDay() * wDays;
+        public double CalculateQGoatsFood() {
+            double qgoatsfooddec = CalculateOneGoatOneDay() * wDays * qGoats;
+            double qgoatsfood = Math.Round(qgoatsfooddec, 2, MidpointRounding.AwayFromZero);
             return qgoatsfood;
         }
     }
