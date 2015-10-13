@@ -7,13 +7,10 @@ namespace Mushrooms {
         int mushrooms = 12;
         int x = 2;
         [TestMethod]
-        public void NumberOfAllMushrooms() {
-            if (mushrooms % (x+1) == 0) {
-                Assert.AreEqual(mushrooms, CheckNumberOfAllMushrooms());
-            } else {
-                Assert.Fail("Total number of mushrooms invalid!");
-            }
+        public void VerifyNumberOfAllMushrooms() {
+            Assert.IsTrue(NumberOfAllMushrooms());
         }
+      
         [TestMethod]
         public void CheckNumberOfRedMushhrooms() {
             Assert.AreEqual(8, NumberOfRedMushrooms());
@@ -31,5 +28,14 @@ namespace Mushrooms {
             int result = white + red;
             return result;
         }
+
+        public bool NumberOfAllMushrooms() {
+            if (mushrooms % (x + 1) == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
     }
 }
