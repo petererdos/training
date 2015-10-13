@@ -11,7 +11,7 @@ namespace Banking {
         int lunaceruta = 23;*/
         
         [TestMethod]
-        public void PercentsOfRequestedMonth() {
+        public void MonthlyrateOfRequestedMonth() {
             Assert.AreEqual(378.77, CalculateMonthlyPercent(40000, 20, 7.57, 39));
         }
 
