@@ -4,11 +4,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Banking {
     [TestClass]
     public class UnitTest1 {
-
-        /*double suma = 40000;
-        double dobanda = 7.57;
-        double aniperioada = 20;
-        int lunaceruta = 23;*/
         
         [TestMethod]
         public void MonthlyrateOfRequestedMonth() {
