@@ -6,7 +6,7 @@ namespace Banking {
     public class UnitTest1 {
         
         [TestMethod]
-        public void MonthlyrateOfRequestedMonth() {
+        public void MonthlyPaymentOfRequestedMonth() {
             Assert.AreEqual(378.77, CalculateMonthlyPercent(40000, 20, 7.57, 39));
         }
 
