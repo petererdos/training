@@ -8,7 +8,7 @@ namespace Mushrooms {
         int x = 2;
         [TestMethod]
         public void NumberOfAllMushrooms() {
-            if (mushrooms % x == 0) {
+            if (mushrooms % (x+1) == 0) {
                 Assert.AreEqual(mushrooms, CheckNumberOfAllMushrooms());
             } else {
                 Assert.Fail("Total number of mushrooms invalid!");
