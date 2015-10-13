@@ -11,7 +11,6 @@ namespace Mushrooms {
             if (mushrooms % x == 0) {
                 Assert.AreEqual(mushrooms, CheckNumberOfAllMushrooms());
             } else {
-                // Assert.AreEqual(-1, CheckNumberOfMushrooms());
                 Assert.Fail("Total number of mushrooms invalid!");
             }
         }
