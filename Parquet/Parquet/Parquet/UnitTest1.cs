@@ -13,8 +13,8 @@ namespace Parquet {
             double roomarea = a * b;
             double parquetarea = m * n;
             double areadifference = roomarea / parquetarea;
-            double totalparquetarea = areadifference + (areadifference * 0.15);
-            return totalparquetarea;
+            double totalparquetpieces = areadifference + (areadifference * 0.15);
+            return totalparquetpieces;
         }
     }
 }
