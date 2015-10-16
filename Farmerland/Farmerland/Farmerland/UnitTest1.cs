@@ -5,7 +5,7 @@ namespace Farmerland {
     [TestClass]
     public class Farmerland {
         [TestMethod]
-        public void GuessTheValueOfA() {
+        public void SearchForTheValueOfA() {
             Assert.AreEqual(770, CalculateArea(770000));
         }
 
