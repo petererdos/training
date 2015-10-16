@@ -6,7 +6,7 @@ namespace UnitTestProject1 {
     public class UnitTest1 {
         [TestMethod]
         public void VerifyMelon() {
-            Assert.IsTrue(CheckIfMelonCanBeSplittedInTwoEvenNumberParts(10));
+            Assert.IsTrue(CheckIfMelonCanBeSplittedInTwoEvenNumberParts(2));
         }
 
         public bool CheckIfMelonCanBeSplittedInTwoEvenNumberParts(int kg) {
