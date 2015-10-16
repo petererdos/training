@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Farmerland {
+namespace FarmerLand {
     [TestClass]
-    public class Farmerland {
+    public class FarmerLand {
         [TestMethod]
         public void SearchForTheValueOfA() {
             Assert.AreEqual(770, CalculateArea(230, 770000));
