@@ -6,11 +6,11 @@ namespace Farmerland {
     public class Farmerland {
         [TestMethod]
         public void GuessTheValueOfA() {
-            Assert.AreEqual(770, CalculateArea());
+            Assert.AreEqual(770, CalculateArea(770000));
         }
 
-        public int CalculateArea() {
-            for (int i = 1; i < 770000; i++) {
+        public int CalculateArea(int area) {
+            for (int i = 1; i < area; i++) {
                 int a = i * (i + 230);
                 if (a == 770000) return i;
             }
