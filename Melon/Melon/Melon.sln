@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Melon", "Melon\Melon.csproj", "{AF730E94-DE38-4AFC-9348-BCF20FFDA0E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{C936A9B0-65DE-4EAB-BEFE-93ABFA888996}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AF730E94-DE38-4AFC-9348-BCF20FFDA0E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF730E94-DE38-4AFC-9348-BCF20FFDA0E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF730E94-DE38-4AFC-9348-BCF20FFDA0E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C936A9B0-65DE-4EAB-BEFE-93ABFA888996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C936A9B0-65DE-4EAB-BEFE-93ABFA888996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C936A9B0-65DE-4EAB-BEFE-93ABFA888996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C936A9B0-65DE-4EAB-BEFE-93ABFA888996}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
