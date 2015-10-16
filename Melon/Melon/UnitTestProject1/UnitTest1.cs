@@ -17,7 +17,9 @@ namespace UnitTestProject1 {
                 }
                 if (((kg / 2) - 1) % 2 == 0) {
                     if (((kg / 2) + 1) % 2 == 0) {
-                        result = true;
+                        if ((((kg / 2) - 1) % 2) + (((kg / 2) + 1) % 2) == kg) {
+                            result = true;
+                        }
                     }
                 }
             }
