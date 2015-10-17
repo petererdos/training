@@ -7,25 +7,25 @@ namespace FizzBuzz
     public class FizzBuzz
     {
         [TestMethod]
-        public void WhichOneIsItCheck1()
+        public void IsItFizz()
         {
             Assert.AreEqual("Fizz", FizzBuzzChecker(3));
         }
 
         [TestMethod]
-        public void WhichOneIsItCheck2()
+        public void IsItBuzz()
         {
             Assert.AreEqual("Buzz", FizzBuzzChecker(5));
         }
 
         [TestMethod]
-        public void WhichOneIsItCheck4()
+        public void isItFizzBuzz()
         {
             Assert.AreEqual("FizzBuzz", FizzBuzzChecker(15));
         }
 
         [TestMethod]
-        public void WhichOneIsItCheck5()
+        public void NoFizzNoBuzzAndNoFizzBuzz()
         {
             Assert.AreEqual("None", FizzBuzzChecker(2));
         }
