@@ -27,9 +27,9 @@ namespace Encryption
         }
 
         [TestMethod]
-        public void CheckNewStringIfOnlyNumbers()
+        public void CheckNewStringIfOnlyInvalidChars()
         {
-            Assert.AreNotEqual(null, Encrypt(4, "123 456 789 123 456 789"));
+            Assert.AreNotEqual(null, Encrypt(4, "123!456#789$123%456^789"));
         }
 
         [TestMethod]
