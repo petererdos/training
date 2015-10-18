@@ -30,29 +30,42 @@ namespace FizzBuzz
             Assert.AreEqual("None", FizzBuzzChecker(2));
         }
 
+        public bool Fizz(int number)
+        {
+            bool result = false;
+            if (number % 3 == 0)
+            {
+                result = true;
+            }
+            return result;
+        }
+
+        public bool Buzz(int number)
+        {
+            bool result = false;
+            if (number % 5 == 0)
+            {
+                result = true;
+            }
+            return result;
+        }
+
+        public bool FizzAndBuzz(int number)
+        {
+            bool result = false;
+            if (Fizz(number)==true && Buzz(number) == true)
+            {
+                result = true;
+            }
+            return result;
+        }
 
         public string FizzBuzzChecker(int number)
         {
-            string result = "None";
-            if (number % 3 == 0)
-            {
-                if (number % 5 == 0)
-                {
-                    result = "FizzBuzz";
-                    return result;
-                }
-            }
-            if (number % 3 == 0)
-            {
-                result = "Fizz";
-                return result;
-            }
-            if (number % 5 == 0)
-            {
-                result = "Buzz";
-                return result;
-            }
-            return result;
+            if (FizzAndBuzz(number) == true) return "FizzBuzz";
+            if (Fizz(number) == true) return "Fizz";
+            if (Buzz(number) == true) return "Buzz";
+            return "None";
         }
     }
 }
