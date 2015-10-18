@@ -19,9 +19,19 @@ namespace FizzBuzz
         }
 
         [TestMethod]
-        public void isItFizzBuzz()
+        public void IsItFizzBuzz()
         {
             Assert.AreEqual("FizzBuzz", FizzBuzzChecker(15));
+        }
+
+        [TestMethod]
+        public void DoNotReturnFizzForFizzBuzz() {
+            Assert.AreNotEqual("Fizz", FizzBuzzChecker(15));
+        }
+
+        [TestMethod]
+        public void DoNotReturnBuzzForFizzBuzz() {
+            Assert.AreNotEqual("Buzz", FizzBuzzChecker(15));
         }
 
         [TestMethod]
