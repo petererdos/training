@@ -10,9 +10,17 @@ namespace Encryption
         [TestMethod]
         public void CheckNewString()
         {
+            //This will always fail because of the randomly generated characters
             Assert.AreEqual("test", Encrypt(4,"nicaieri, nu e ca acasa"));
         }
         /*
+
+        [TestMethod]
+        public void CheckIfStringIsNull()
+        {
+            Assert.AreEqual(null, CheckNull("nicaieri, nu e ca acasa"));
+        }
+
         [TestMethod]
         public void CheckNewString()
         {
@@ -94,14 +102,13 @@ namespace Encryption
             int x = 0;
             int y = 0;
             foreach (char c in finalstring)
-            {                
-                 
-                    if (x==(columns-1))
-                    if (y == (lines - 1)) break;
-                
+            {
 
                 enc[x, y] = c;
 
+                if (x==(columns-1))
+                    if (y == (lines - 1)) break;         
+                            
                 if (y == (lines-1))
                 {
                     y = -1;
@@ -109,6 +116,7 @@ namespace Encryption
                 }
                 y++;
             }
+
             //rebuild the encrypted string from the array
             StringBuilder encstring = new StringBuilder();
             x = 0;
@@ -116,19 +124,17 @@ namespace Encryption
             int charnumfinalstring = CountChars(finalstring);
             for (int i=0; i < charnumfinalstring; i++)
             {
-                
-
-                if (x == (columns - 1))
-                    if (y == (lines - 1)) break;
-
                 encstring.Append(enc[x, y]);
 
-                if (y == (lines - 1))
+                if (x == (columns - 1))
+                    if (y == (lines - 1)) break;               
+
+                if (x == (columns - 1))
                 {
-                    y = -1;
-                    x++;
+                    x = -1;
+                    y++;
                 }
-                y++;
+                x++;
             }
             string finalencstring = encstring.ToString();
 
