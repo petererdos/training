@@ -29,7 +29,7 @@ namespace Encryption
         [TestMethod]
         public void CheckNewStringIfOnlyInvalidChars()
         {
-            Assert.AreNotEqual(null, Encrypt(4, "123!456#789$123%456^789"));
+            Assert.AreEqual("", Encrypt(4, "123!456#789$123%456^789"));
         }
 
         [TestMethod]
