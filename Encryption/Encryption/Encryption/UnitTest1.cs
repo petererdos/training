@@ -32,6 +32,12 @@ namespace Encryption
             Assert.AreEqual("totendhweploeaerynryroteesrghwatoreororatrewfmhktrrsiswieora", Encrypt(6, "There are two ways to write error-free programs; only the third one works a."));
         }
 
+        [TestMethod]
+        public void StripSomeOtherString()
+        {
+            Assert.AreEqual("therearetwowaystowriteerrorfreeprogramsonlythethirdoneworksa", StripString("There are two ways to write error-free programs; only the third one works a."));
+        }
+
 
         [TestMethod]
         public void CheckIfStringIsNotNull()
