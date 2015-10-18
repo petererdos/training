@@ -11,7 +11,7 @@ namespace Encryption
         public void CheckNewString()
         {
             //This will always fail because of the randomly generated characters
-            Assert.AreEqual("nicaieri, nu e ca acasa", Encrypt(4,"nicaieri, nu e ca acasa"));
+            Assert.AreEqual("neeaircsciaaanaaiuca", Encrypt(4,"nicaieri, nu e ca acasa"));
         }
 
         [TestMethod]
