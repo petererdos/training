@@ -46,7 +46,7 @@ namespace Encryption
 
 
         [TestMethod]
-        public void CheckIfStringIsNotNull()
+        public void CheckIfStringIsNot0()
         {
             Assert.AreNotEqual(0, CountChars("nicaieri, nu e ca acasa"));
         }
