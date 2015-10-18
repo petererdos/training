@@ -15,19 +15,19 @@ namespace Encryption
         }
 
         [TestMethod]
-        public void CheckNewStringWithoutRandomChars()
+        public void CheckNewStringWithoutNeedingRandomChars()
         {
             Assert.AreEqual("neeaircsciaaanaaiuca", Encrypt(4, "nicaieri, nu e ca acasaaa"));
         }
 
         [TestMethod]
-        public void CheckNewStringWithoutRandomCharsAndUppercase()
+        public void CheckNewStringWithoutNeedingRandomCharsAndUppercase()
         {
             Assert.AreNotEqual("NEEAIRCSCIAAANAAIUCA", Encrypt(4, "NICAIERI, NU E CA ACASAAA"));
         }
 
         [TestMethod]
-        public void CheckSomeOtherString()
+        public void CheckSomeOtherStringWithoutNeedingRandomChars()
         {
             Assert.AreEqual("totendhweploeaerynryroteesrghwatoreororatrewfmhktrrsiswieora", Encrypt(6, "There are two ways to write error-free programs; only the third one works a."));
         }
