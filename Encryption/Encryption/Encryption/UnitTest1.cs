@@ -70,24 +70,47 @@ namespace Encryption
         }
 
 
-        public string Encrypt(int columns, string str)
+        public char Encrypt(int columns, string str)
         {
+            //keep only letters
             string newstring = StripString(str);
+            //count the number of characters in the stripped string
             int charnumber = CountChars(newstring);
+            //calculate the limits of the array which will be used for the encryption
             int lines = CalculateLines(columns, newstring);
+
+            //how many characters to generate?
             int togenerate = (lines * columns) - charnumber;
             StringBuilder genstring = new StringBuilder();
-
             for (int i = 1; i <= togenerate; i++)
             {
                 genstring.Append(GetLetter());
             }
             string appendstring = genstring.ToString();
             string finalstring = newstring + appendstring;
-            string[,] enc = new string[lines,columns];
 
+            //build the array for encryption
+            char[,] enc = new char[columns,lines];
+            int x = 0;
+            int y = 0;
+            foreach (char c in finalstring)
+            {                
+                 
+                    if (x==(columns-1))
+                    if (y == (lines - 1)) break;
+                
 
-            return finalstring;
+                enc[x, y] = c;
+
+                if (y == (lines-1))
+                {
+                    y = -1;
+                    x++;
+                }
+                y++;
+            }
+
+            return enc[3, 2];
         } 
 
     }
