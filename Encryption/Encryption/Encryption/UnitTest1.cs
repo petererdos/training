@@ -27,6 +27,12 @@ namespace Encryption
         }
 
         [TestMethod]
+        public void CheckNewStringIfOnlyNumbersWithoutNeedingRandomCharsAndUppercase()
+        {
+            Assert.AreNotEqual(null, Encrypt(4, "123 456 789 123 456 789"));
+        }
+
+        [TestMethod]
         public void CheckSomeOtherStringWithoutNeedingRandomChars()
         {
             Assert.AreEqual("totendhweploeaerynryroteesrghwatoreororatrewfmhktrrsiswieora", Encrypt(6, "There are two ways to write error-free programs; only the third one works a."));
