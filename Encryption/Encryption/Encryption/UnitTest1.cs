@@ -70,7 +70,7 @@ namespace Encryption
         }
 
 
-        public char Encrypt(int columns, string str)
+        public string Encrypt(int columns, string str)
         {
             //keep only letters
             string newstring = StripString(str);
@@ -109,8 +109,30 @@ namespace Encryption
                 }
                 y++;
             }
+            //rebuild the encrypted string from the array
+            StringBuilder encstring = new StringBuilder();
+            x = 0;
+            y = 0;
+            int charnumfinalstring = CountChars(finalstring);
+            for (int i=0; i < charnumfinalstring; i++)
+            {
+                
 
-            return enc[3, 2];
+                if (x == (columns - 1))
+                    if (y == (lines - 1)) break;
+
+                encstring.Append(enc[x, y]);
+
+                if (y == (lines - 1))
+                {
+                    y = -1;
+                    x++;
+                }
+                y++;
+            }
+            string finalencstring = encstring.ToString();
+
+            return finalencstring;
         } 
 
     }
