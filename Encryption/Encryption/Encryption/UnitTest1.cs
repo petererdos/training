@@ -89,7 +89,7 @@ namespace Encryption
             string appendstring = genstring.ToString();
             string finalstring = newstring + appendstring;
 
-            //build the array for encryption
+            //build the 2D array for encryption
             char[,] enc = new char[columns,lines];
             int x = 0;
             int y = 0;
