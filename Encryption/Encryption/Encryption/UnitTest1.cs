@@ -11,34 +11,52 @@ namespace Encryption
         public void CheckNewString()
         {
             //This will always fail because of the randomly generated characters
-            Assert.AreEqual("test", Encrypt(4,"nicaieri, nu e ca acasa"));
-        }
-        /*
-
-        [TestMethod]
-        public void CheckIfStringIsNull()
-        {
-            Assert.AreEqual(null, CheckNull("nicaieri, nu e ca acasa"));
+            Assert.AreEqual("nicaieri, nu e ca acasa", Encrypt(4,"nicaieri, nu e ca acasa"));
         }
 
         [TestMethod]
-        public void CheckNewString()
+        public void CheckNewStringWithoutRandomChars()
         {
-            Assert.AreEqual("test", StripString("nicaieri, nu e ca acasa"));
+            Assert.AreEqual("neeaircsciaaanaaiuca", Encrypt(4, "nicaieri, nu e ca acasaaa"));
+        }
+
+        [TestMethod]
+        public void CheckNewStringWithoutRandomCharsAndUppercase()
+        {
+            Assert.AreNotEqual("NEEAIRCSCIAAANAAIUCA", Encrypt(4, "NICAIERI, NU E CA ACASAAA"));
+        }
+
+        [TestMethod]
+        public void CheckSomeOtherString()
+        {
+            Assert.AreEqual("totendhweploeaerynryroteesrghwatoreororatrewfmhktrrsiswieora", Encrypt(6, "There are two ways to write error-free programs; only the third one works a."));
+        }
+
+
+        [TestMethod]
+        public void CheckIfStringIsNotNull()
+        {
+            Assert.AreNotEqual(0, CountChars("nicaieri, nu e ca acasa"));
+        }
+
+        [TestMethod]
+        public void StripNewString()
+        {
+            Assert.AreEqual("nicaierinuecaacasa", StripString("nicaieri, nu e ca acasa"));
         }
 
         [TestMethod]
         public void CheckLines()
         {
-            Assert.AreEqual(1, CalculateLines(4,"nicaieri, nu e ca acasa"));
+            Assert.AreEqual(5, CalculateLines(4,"nicaieri, nu e ca acasa"));
         }
 
         [TestMethod]
         public void CheckCharNums()
         {
-            Assert.AreEqual(1, CountChars("nicaieri, nu e ca acasa"));
+            Assert.AreEqual(18, CountChars("nicaieri, nu e ca acasa"));
         }
-        */
+        
 
         public string StripString(string str)
         {
@@ -46,7 +64,8 @@ namespace Encryption
             foreach (char c in str)
             {
                 if (Char.IsLetter(c)) {
-                    newstring.Append(c);
+                    char ch = Char.ToLower(c);
+                    newstring.Append(ch);
                     }
             }
             string result = newstring.ToString();
