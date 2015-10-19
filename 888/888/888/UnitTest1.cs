@@ -5,13 +5,18 @@ namespace _888 {
     [TestClass]
     public class UnitTest1 {
         [TestMethod]
-        public void CheckTrippleEightValidNumber() {
+        public void CheckTrippleEightValidNumber1() {
             Assert.AreEqual(192,TrippleEight(1));
         }
 
         [TestMethod]
-        public void CheckTrippleEightInValidNumber() {
-            Assert.AreEqual(0, TrippleEight(1));
+        public void CheckTrippleEightValidNumber2() {
+            Assert.AreEqual(442, TrippleEight(2));
+        }
+
+        [TestMethod]
+        public void CheckTrippleEightInvalidNumber() {
+            Assert.AreEqual(0, TrippleEight(0));
         }
 
         public double TrippleEight(int k)
