@@ -6,8 +6,19 @@ namespace Archeology {
     public class UnitTest1 {
         [TestMethod]
         public void VerifyAreaOfATriagle() {
-            Assert.AreEqual(0, CalculateArea(1, 1, 1, 5, 4, 5));
+            Assert.AreEqual(6, CalculateArea(1, 1, 1, 5, 4, 5));
         }
+
+        [TestMethod]
+        public void VerifyAreaOfAnotherTriagle1() {
+            Assert.AreEqual(9, CalculateArea(1.123456, 3.123456, 5.123456, 5.123456, 4.123456, 0.123456),1);
+        }
+
+        [TestMethod]
+        public void VerifyAreaOfMirroredTriagle1() {
+            Assert.AreEqual(9, CalculateArea(5.123456, 5.123456, 1.123456, 3.123456, 4.123456, 0.123456),1);
+        }
+
 
         public double DistanceBetweenTwoCoordinates(double c1, double c2) {
             return Math.Abs(c1 - c2);
