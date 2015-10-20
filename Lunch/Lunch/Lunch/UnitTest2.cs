@@ -4,10 +4,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Lunch {
     [TestClass]
     public class UnitTest2 {
-        /*[TestMethod]
-        public void CheckForFactorsOfANumber() {
+        [TestMethod]
+        public void CheckForFactorsOfABigNumber() {
             CollectionAssert.AreEqual(new int[] { 2, 2, 3, 3, 5, 7, 7 }, FindAllFactors(8820));
-        }*/
+        }
 
         [TestMethod]
         public void LCM_OF_4_10() {
