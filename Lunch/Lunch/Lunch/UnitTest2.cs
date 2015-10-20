@@ -6,7 +6,7 @@ namespace Lunch {
     public class UnitTest2 {
         [TestMethod]
         public void CheckForFactorsOfANumber() {
-            CollectionAssert.AreEqual(new int[] {1, 5}, FindAllFactors(5));
+            CollectionAssert.AreEqual(new int[] {2, 3, 3, 5}, FindAllFactors(90));
         }
 
         public bool IsPrime(int number) {
