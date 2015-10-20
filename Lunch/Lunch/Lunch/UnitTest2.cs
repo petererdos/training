@@ -30,6 +30,16 @@ namespace Lunch {
         }
 
         [TestMethod]
+        public void LCM_OF_4_4() {
+            Assert.AreEqual(4, LCM(4, 4));
+        }
+
+        [TestMethod]
+        public void LCM_OF_5_5() {
+            Assert.AreEqual(5, LCM(5, 5));
+        }
+
+        [TestMethod]
         public void PrimeFactorsOf4() {
             CollectionAssert.AreEqual(new int[] { 2, 2 }, FindAllFactors(4));
         }
