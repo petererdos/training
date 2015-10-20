@@ -11,7 +11,7 @@ namespace Lunch {
 
         [TestMethod]
         public void TEST1() {
-            Assert.AreEqual(1, PowerOfFactors(61740));
+            Assert.AreEqual(1, PowerOfFactors(432180));
         }
 
         public bool IsPrime(int number) {
@@ -113,6 +113,29 @@ namespace Lunch {
             int[,] finalarray = new int[limitofarray + 1, 2];
             finalarray = TrimTheArrayOfZeros(powerfactors, limitofarray);
             return finalarray;
+        }
+
+        public int[,] CheckForOccurances(int [,] arraytocheck, int occurance){
+            int[,] pair = new int [1,2]{{0,0}};
+            for (int i = 0; i < arraytocheck.Length; i++) {
+                if (arraytocheck[i, 0] == occurance) {
+                    pair[0, 0] = arraytocheck[i, 0];
+                    pair[0, 1] = arraytocheck[i, 1];
+                }
+            }
+            return pair;
+        }
+
+        public int LCM(int number1, int number2) {
+            int[,] zero = new int [1,2]{{0,0}};
+            int[,] primefactorsofnumber1 = PowerOfFactors(number1);
+            int[,] primefactorsofnumber2 = PowerOfFactors(number2);
+            int lmc = 1;
+            for (int i = 0; i < primefactorsofnumber1.Length; i++) {
+                if (CheckForOccurances(primefactorsofnumber2, primefactorsofnumber1[i, 0]) != zero) {
+
+                }
+            }
         }
 
     }
