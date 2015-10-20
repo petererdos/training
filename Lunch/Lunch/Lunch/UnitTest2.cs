@@ -4,9 +4,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Lunch {
     [TestClass]
     public class UnitTest2 {
-        [TestMethod]
+        /*[TestMethod]
         public void CheckForFactorsOfANumber() {
             CollectionAssert.AreEqual(new int[] { 2, 2, 3, 3, 5, 7, 7 }, FindAllFactors(8820));
+        }*/
+
+        [TestMethod]
+        public void TEST1() {
+            Assert.AreEqual(1, PowerOfFactors(61740));
         }
 
         public bool IsPrime(int number) {
@@ -64,7 +69,51 @@ namespace Lunch {
                 Array.Resize(ref factors, countfactors);
             }
             return factors;
-        } 
+        }
+
+        public int FindPower(int[] primefactors, int powercandidate){
+            int powercount = 0;
+            for (int i = 0; i < primefactors.Length; i++) {
+                if (primefactors[i] == powercandidate) powercount++;
+            }
+            return powercount;
+        }
+
+        public int CalculateLimitOfArray(int[,] array, int lastknownlimitofarray){
+            int limitofarray = 0;
+            for (int i = 0; i < lastknownlimitofarray; i++) {
+                if (array[i, 0] != 0) limitofarray++;
+                if (array[i, 0] == 0) break;
+            }
+            return limitofarray;
+        }
+
+        public int[,] TrimTheArrayOfZeros(int[,] arraytotrim, int newarraylimit) {
+            int[,] trimmedarray = new int[newarraylimit, 2];
+            for (int i = 0; i < newarraylimit; i++) {
+                trimmedarray[i, 0] = arraytotrim[i, 0];
+                trimmedarray[i, 1] = arraytotrim[i, 1];
+            }
+            return trimmedarray;
+        }
+
+        public int[,] PowerOfFactors(int a) {
+            int[] primefactorsofnumber = FindAllFactors(a);
+            int nextfactor = 0;
+            int[,] powerfactors = new int[primefactorsofnumber.Length, 2];
+            int lenght = primefactorsofnumber.Length;
+            for (int i = 0; i < primefactorsofnumber.Length; i++) {
+                if (nextfactor >= primefactorsofnumber.Length) break;
+                powerfactors[i, 0] = primefactorsofnumber[nextfactor];
+                powerfactors[i, 1] = FindPower(primefactorsofnumber, powerfactors[i, 0]);
+                nextfactor += powerfactors[i, 1];
+            }
+            int limitofarray = CalculateLimitOfArray(powerfactors, lenght);
+
+            int[,] finalarray = new int[limitofarray + 1, 2];
+            finalarray = TrimTheArrayOfZeros(powerfactors, limitofarray);
+            return finalarray;
+        }
 
     }
 }
