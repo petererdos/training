@@ -10,8 +10,38 @@ namespace Lunch {
         }*/
 
         [TestMethod]
-        public void TEST1() {
-            Assert.AreEqual(1, PowerOfFactors(432180));
+        public void LCM_OF_4_10() {
+            Assert.AreEqual(20, LCM(4,10));
+        }
+
+        [TestMethod]
+        public void LCM_OF_10_4() {
+            Assert.AreEqual(20, LCM(10, 4));
+        }
+
+        [TestMethod]
+        public void LCM_OF_4_6() {
+            Assert.AreEqual(12, LCM(4, 6));
+        }
+
+        [TestMethod]
+        public void LCM_OF_6_4() {
+            Assert.AreEqual(12, LCM(6, 4));
+        }
+
+        [TestMethod]
+        public void PrimeFactorsOf4() {
+            CollectionAssert.AreEqual(new int[] { 2, 2 }, FindAllFactors(4));
+        }
+
+        [TestMethod]
+        public void FactorsOf10() {
+            CollectionAssert.AreEqual(new int[] { 2, 5 }, FindAllFactors(10));
+        }
+
+        [TestMethod]
+        public void FactorsOf6() {
+            CollectionAssert.AreEqual(new int[] { 2, 3 }, FindAllFactors(6));
         }
 
         public bool IsPrime(int number) {
@@ -117,7 +147,8 @@ namespace Lunch {
 
         public int[,] CheckForOccurances(int [,] arraytocheck, int occurance){
             int[,] pair = new int [1,2]{{0,0}};
-            for (int i = 0; i < arraytocheck.Length; i++) {
+            int length = arraytocheck.GetLength(0);
+            for (int i = 0; i < length; i++) {
                 if (arraytocheck[i, 0] == occurance) {
                     pair[0, 0] = arraytocheck[i, 0];
                     pair[0, 1] = arraytocheck[i, 1];
@@ -126,17 +157,37 @@ namespace Lunch {
             return pair;
         }
 
-        public int LCM(int number1, int number2) {
-            int[,] zero = new int [1,2]{{0,0}};
-            int[,] primefactorsofnumber1 = PowerOfFactors(number1);
-            int[,] primefactorsofnumber2 = PowerOfFactors(number2);
-            int lmc = 1;
-            for (int i = 0; i < primefactorsofnumber1.Length; i++) {
-                if (CheckForOccurances(primefactorsofnumber2, primefactorsofnumber1[i, 0]) != zero) {
-
+        public double CalculateLCM(int[,] array2, int[,] array1) {
+            int[,] zero = new int[1, 2] { { 0, 0 } };
+            int[,] temp = new int[1, 2];
+            int power;
+            int lenghtprimefactorsofnumber1 = array1.GetLength(0);
+            int lenghtprimefactorsofnumber2 = array2.GetLength(0);
+            double lcm = 1;
+            for (int i = 0; i < lenghtprimefactorsofnumber2; i++) {
+                if (i != lenghtprimefactorsofnumber1) {
+                    temp = CheckForOccurances(array2, array1[i, 0]);
+                    if (temp == zero) lcm = lcm * Math.Pow(array1[i, 0], array1[i, 1]);
+                    if (temp != zero) {
+                        power = Math.Max(array1[i, 1], temp[0, 1]);
+                        lcm = lcm * Math.Pow(array1[i, 0], power);
+                    }
+                } else {
+                    lcm = lcm * Math.Pow(array2[i, 0], array2[i, 1]);
                 }
             }
+            return lcm;
         }
 
+        public double LCM(int number1, int number2) {
+            int[,] primefactorsofnumber1 = PowerOfFactors(number1);
+            int[,] primefactorsofnumber2 = PowerOfFactors(number2);
+            double lcm =1; 
+            int lenghtprimefactorsofnumber1 = primefactorsofnumber1.GetLength(0);
+            int lenghtprimefactorsofnumber2 = primefactorsofnumber2.GetLength(0);
+            if (lenghtprimefactorsofnumber2 > lenghtprimefactorsofnumber1) lcm = CalculateLCM(primefactorsofnumber2, primefactorsofnumber1);
+            else lcm = CalculateLCM(primefactorsofnumber1, primefactorsofnumber2);
+            return lcm;
+        }      
     }
 }
