@@ -8,6 +8,22 @@ namespace Lunch {
         public void GCDOfTwoNumbers() {
             Assert.AreEqual(12, LCM(6, 4));
         }
+
+        [TestMethod]
+        public void GCDOfInvalidNumbers1() {
+            Assert.AreEqual(-1, LCM(0, 4));
+        }
+
+        [TestMethod]
+        public void GCDOfInvalidNumbers2() {
+            Assert.AreEqual(-1, LCM(4, 0));
+        }
+
+        [TestMethod]
+        public void GCDOfEqualNumbers() {
+            Assert.AreEqual(4, LCM(4, 4));
+        }
+
         public int GCD(int a, int b) {
             int min = Math.Min(a, b);
             int max = Math.Max(a, b);
