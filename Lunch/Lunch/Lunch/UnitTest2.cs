@@ -98,7 +98,6 @@ namespace Lunch {
             bool arethereanyfactors = false;
             int divider = 2;
             int productoffactors = 0;
-            if (number > 1) {
                 do {
                     if (IsItFactor(partialnumber, divider) == true) {
                         partialnumber = partialnumber / divider;
@@ -119,7 +118,6 @@ namespace Lunch {
                 }
 
                 Array.Resize(ref factors, countfactors);
-            }
             return factors;
         }
 
