@@ -4,10 +4,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Lunch {
     [TestClass]
     public class UnitTest2 {
-        [TestMethod]
-        public void CheckForFactorsOfABigNumber() {
-            CollectionAssert.AreEqual(new int[] { 2, 2, 3, 3, 5, 7, 7 }, FindAllFactors(8820));
-        }
 
         [TestMethod]
         public void LCM_OF_4_10() {
@@ -40,6 +36,17 @@ namespace Lunch {
         }
 
         [TestMethod]
+        public void LCM_OF_INVALID_NUMBERS1() {
+            Assert.AreEqual(0, LCM(0, 5));
+        }
+
+        [TestMethod]
+        public void LCM_OF_INVALID_NUMBERS2() {
+            Assert.AreEqual(0, LCM(5, 1));
+        }
+
+
+        [TestMethod]
         public void PrimeFactorsOf4() {
             CollectionAssert.AreEqual(new int[] { 2, 2 }, FindAllFactors(4));
         }
@@ -52,6 +59,11 @@ namespace Lunch {
         [TestMethod]
         public void FactorsOf6() {
             CollectionAssert.AreEqual(new int[] { 2, 3 }, FindAllFactors(6));
+        }
+
+        [TestMethod]
+        public void CheckForFactorsOfABigNumber() {
+            CollectionAssert.AreEqual(new int[] { 2, 2, 3, 3, 5, 7, 7 }, FindAllFactors(8820));
         }
 
         public bool IsPrime(int number) {
@@ -192,7 +204,8 @@ namespace Lunch {
         public double LCM(int number1, int number2) {
             int[,] primefactorsofnumber1 = PowerOfFactors(number1);
             int[,] primefactorsofnumber2 = PowerOfFactors(number2);
-            double lcm =1; 
+            double lcm =1;
+            if (number1 < 2 || number2 < 2) return 0;
             int lenghtprimefactorsofnumber1 = primefactorsofnumber1.GetLength(0);
             int lenghtprimefactorsofnumber2 = primefactorsofnumber2.GetLength(0);
             if (lenghtprimefactorsofnumber2 > lenghtprimefactorsofnumber1) lcm = CalculateLCM(primefactorsofnumber2, primefactorsofnumber1);
