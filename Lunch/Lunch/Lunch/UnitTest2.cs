@@ -200,10 +200,10 @@ namespace Lunch {
         }
 
         public double LCM(int number1, int number2) {
+            if (number1 < 2 || number2 < 2) return 0;
             int[,] primefactorsofnumber1 = PowerOfFactors(number1);
             int[,] primefactorsofnumber2 = PowerOfFactors(number2);
             double lcm =1;
-            if (number1 < 2 || number2 < 2) return 0;
             int lenghtprimefactorsofnumber1 = primefactorsofnumber1.GetLength(0);
             int lenghtprimefactorsofnumber2 = primefactorsofnumber2.GetLength(0);
             if (lenghtprimefactorsofnumber2 > lenghtprimefactorsofnumber1) lcm = CalculateLCM(primefactorsofnumber2, primefactorsofnumber1);
