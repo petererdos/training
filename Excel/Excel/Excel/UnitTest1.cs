@@ -28,9 +28,21 @@ namespace Excel
         }
 
         [TestMethod]
+        public void Convert1() {
+            CollectionAssert.AreEqual(new string[] { "A" }, ConvertToBase(1, 26));
+        }
+
+        [TestMethod]
+        public void Convert2() {
+            CollectionAssert.AreEqual(new string[] { "B" }, ConvertToBase(2, 26));
+        }
+
+        [TestMethod]
         public void Convert0_InvalidNumber() {
             CollectionAssert.AreEqual(new string[] { "0" }, ConvertToBase(0, 26));
         }
+
+
 
 
         public int[] ExecuteDivisions(int number, int thebase) {
