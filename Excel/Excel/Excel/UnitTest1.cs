@@ -38,6 +38,11 @@ namespace Excel
         }
 
         [TestMethod]
+        public void Convert27() {
+            CollectionAssert.AreEqual(new string[] { "A", "A" }, ConvertToBase(27, 26));
+        }
+
+        [TestMethod]
         public void Convert0_InvalidNumber() {
             CollectionAssert.AreEqual(new string[] { "0" }, ConvertToBase(0, 26));
         }
