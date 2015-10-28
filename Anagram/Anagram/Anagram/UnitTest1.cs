@@ -27,6 +27,16 @@ namespace Anagram {
         }
 
         [TestMethod]
+        public void AnagramsOfWord_AA() {
+            Assert.AreEqual(1, CalculateAnagrams("AA"));
+        }
+
+        [TestMethod]
+        public void AnagramsOfWord_AAA() {
+            Assert.AreEqual(1, CalculateAnagrams("AAA"));
+        }
+
+        [TestMethod]
         public void AnagramsOfWord_IS() {
             Assert.AreEqual(2, CalculateAnagrams("is"));
         }
@@ -102,7 +112,6 @@ namespace Anagram {
             int anagrams = Factorial(letters);
             List<char> theword = new List<char>();
             theword = ConvertToList(word);
-
 
             do {
                 char c = theword[0];
